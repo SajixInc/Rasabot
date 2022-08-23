@@ -1,0 +1,75 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: pincode
+  examples: |
+    - check by pincode
+    - by pin
+    - pincode
+
+- intent: location
+  examples: |
+    - by location
+    - by longitude and lattitude
+    - by lat-lon
+
+- intent: district
+  examples: |
+    - by district id
+    - by district
+    - with district id
+
+- intent: my_email
+  examples: |
+    - my email id is [ashus3868@gmail.com]{"entity":"email"}
+    - this is my email id [ashus3868@gmail.com]{"entity":"email"}
+    - [ashus3868@gmail.com]{"entity":"email"}
+
+- intent: restart
+  examples: |
+    - restart the conversation
+    - restart chat
+    - start the conversation again
+    - start again

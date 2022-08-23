@@ -1,0 +1,29 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="16">
+            <item index="0" class="java.lang.String" itemvalue="botocore" />
+            <item index="1" class="java.lang.String" itemvalue="tzdata" />
+            <item index="2" class="java.lang.String" itemvalue="asgiref" />
+            <item index="3" class="java.lang.String" itemvalue="requests" />
+            <item index="4" class="java.lang.String" itemvalue="jmespath" />
+            <item index="5" class="java.lang.String" itemvalue="boto3" />
+            <item index="6" class="java.lang.String" itemvalue="django-rest-framework" />
+            <item index="7" class="java.lang.String" itemvalue="s3transfer" />
+            <item index="8" class="java.lang.String" itemvalue="Django" />
+            <item index="9" class="java.lang.String" itemvalue="certifi" />
+            <item index="10" class="java.lang.String" itemvalue="charset-normalizer" />
+            <item index="11" class="java.lang.String" itemvalue="django-model-utils" />
+            <item index="12" class="java.lang.String" itemvalue="pytz" />
+            <item index="13" class="java.lang.String" itemvalue="urllib3" />
+            <item index="14" class="java.lang.String" itemvalue="django-cors-headers" />
+            <item index="15" class="java.lang.String" itemvalue="Pillow" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,30 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_How_slots
+
+- story: send mail path
+  steps:
+  - intent: affirm
+  - action: utter_your_email
+  - intent: my_email
+    entities:
+      - email: "ashus3868@gmail.com"
+  - slot_was_set:
+      - email: "ashus3868@gmail.com"
+  - action: action_send_mail
+
+- story: happy path
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+
+- story: restart
+  steps:
+    - intent: restart
+    - action: action_restart

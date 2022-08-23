@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>!(function () {
+    let e = document.createElement("script"),
+      t = document.head || document.getElementsByTagName("head")[0];
+    (e.src =
+      "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+      // Replace 1.x.x with the version that you want
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            customData: { language: "en" },
+            socketUrl: "https://78b0-136-185-230-155.in.ngrok.io",
+            socketPath: "/socket.io/",
+            // add other props here
+            title: "Rasa bot",
+            subtitle: "Get It, Make It.",
+            showMessageDate: true,
+            inputTextFieldHint:"Type Hi",
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+  })();
+  localStorage.clear();
+  </script>
+</body>
+</html>

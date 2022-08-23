@@ -1,0 +1,65 @@
+version: "2.0"
+
+rules:
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate pincode form
+  steps:
+  - intent: pincode
+  - action: slot_pincode_form
+  - active_loop: slot_pincode_form
+
+- rule: Submit pincode form
+  condition:
+  # Condition that form is active.
+  - active_loop: slot_pincode_form
+  steps:
+  # Form is deactivated
+  - action: slot_pincode_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_pincode_submit
+
+- rule: Activate district form
+  steps:
+  - intent: district
+  - action: slot_district_form
+  - active_loop: slot_district_form
+
+- rule: Submit district form
+  condition:
+  # Condition that form is active.
+  - active_loop: slot_district_form
+  steps:
+  # Form is deactivated
+  - action: slot_district_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_district_submit
+
+- rule: Activate location form
+  steps:
+  - intent: location
+  - action: slot_location_form
+  - active_loop: slot_location_form
+
+- rule: Submit location form
+  condition:
+  # Condition that form is active.
+  - active_loop: slot_location_form
+  steps:
+  # Form is deactivated
+  - action: slot_location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_location_submit

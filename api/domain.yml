@@ -1,0 +1,114 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- pincode:
+    use_entities: true
+- location:
+    use_entities: true
+- district:
+    use_entities: true
+- my_email:
+    use_entities: true
+- restart:
+    use_entities: true
+entities:
+- email
+slots:
+  pincode:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  date:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  lattitude:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  district_id:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  longitude:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! Welcome to LifeEazy CoWin Vaccine Notifier. I am here to help you, find the available slots near you for the Vaccination
+  utter_How_slots:
+  - buttons:
+    - payload: /pincode
+      title: By Pincode
+    - payload: /district
+      title: By District Id
+    - payload: /location
+      title: By Location(lat-lon)
+    text: How do you want to check for the slots availability?
+  utter_ask_pincode:
+  - text: Enter your pincode
+  utter_ask_district_id:
+  - text: Enter your district id
+  utter_ask_longitude:
+  - text: Enter your longitude
+  utter_ask_lattitude:
+  - text: Enter your lattitude
+  utter_ask_date:
+  - text: Enter the date you want to check for in the given format 'DD-MM-YYYY'
+  utter_your_email:
+  - text: Enter your email id.
+  utter_goodbye:
+  - text: Thank you for your time.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- action_location_submit
+- action_district_submit
+- action_pincode_submit
+- action_send_mail
+- action_restart
+forms:
+  slot_pincode_form:
+    date:
+    - type: from_text
+    pincode:
+    - type: from_text
+  slot_district_form:
+    date:
+    - type: from_text
+    district_id:
+    - type: from_text
+  slot_location_form:
+    lattitude:
+    - type: from_text
+    longitude:
+    - type: from_text
+e2e_actions: []
