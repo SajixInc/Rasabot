@@ -2,7 +2,7 @@
 
 
 
-# Sample Rasa webui Chatbot with API connection 
+# Sample Rasa Webui Chatbot with API connection 
 
 Rasa is an open-source machine learning framework for automated text and voice-based conversations.Understand messages, hold conversations, and connect to messaging channels and APIs.
 It's incredibly powerful and is used bydevelopers worldwide to create chatbots and contextual assistants. Before we get into Installation, let's look into some simple concepts that we should know while creating a chatbot.
