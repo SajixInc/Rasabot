@@ -1,24 +1,31 @@
-<img align="right" width="33%" src="https://vivifyassets.s3.ap-south-1.amazonaws.com/lifeeazy-logo1.png">
+
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/lifeeazy-logo1.png" align="right" width="250"/> <img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png" width="180"/> 
+
+<h1 font-size="50px" align="center">Sample RASA Webui Chatbot with API connection </h1>
+
+RASA is an open-source machine learning framework for automated text and voice-based conversations. Understand messages, hold conversations, and connect to messaging channels and APIs.
+It's incredibly powerful and is used by developers worldwide to create chatbots and contextual assistants. Before we get into Installation, let's look into some simple concepts that we should know while creating a chatbot.
+<div align="center">
+  
+  <img src="https://img.shields.io/badge/Python-3.7-yellowgreen" />
+    <img src="https://img.shields.io/badge/Rasa-2.8.1-blueviolet" />
+    <img src="https://img.shields.io/badge/Release-1.0.0-blue" />
+  </div>
+  
+<div align="center">
+ <img  src="https://vivifyassets.s3.ap-south-1.amazonaws.com/ezgif.com-gif-maker.gif" />
+  
+</div>
 
 
 
-# Sample Rasa Webui Chatbot with API connection 
-
-Rasa is an open-source machine learning framework for automated text and voice-based conversations.Understand messages, hold conversations, and connect to messaging channels and APIs.
-It's incredibly powerful and is used bydevelopers worldwide to create chatbots and contextual assistants. Before we get into Installation, let's look into some simple concepts that we should know while creating a chatbot.
-
-[![Python](https://img.shields.io/badge/Python-3.7-yellowgreen)](https://www.python.org/downloads/release/python-370/)
-[![Rasa](https://img.shields.io/badge/Rasa-2.8.1-blueviolet)](https://rasa.com/)
-[![Release](https://img.shields.io/badge/Release-1.0.0-blue)](http://www.gnu.org/licenses/agpl-3.0)
-
-
-# ![](https://vivifyassets.s3.ap-south-1.amazonaws.com/ezgif.com-gif-maker.gif)
 ## Features
 
 - Sample Bot
-- Api Connectivity
+- API Connectivity
 - Fullscreen mode
-- Show Image
+- Show Image(Display Immage)
 - Change Chatbot Avatar
 
 
@@ -43,36 +50,38 @@ It's incredibly powerful and is used bydevelopers worldwide to create chatbots a
 - Visual Studio
 - Git
 
-#### Getting Started With Local Development
+[**Check Installation Requirement for RASA** ](https://rasa.com/docs/rasa-enterprise/1.0.x/installation-and-setup/requirements/)
+## Getting Started With Local Development
 
 
 ## Installation
 * Open Visual Studio and go to Terminal and run the following command
-* Firstly see your Python Version to know is it installed in your System
+* First check your Python Version installed in your System
 
 ```bash
   python --version
 ```
-* You need to create virtualenv it is used to manage Python packages for different projects. Using virtualenv allows you to avoid installing Python packages globally which could break system tools or other projects.
+* You need to create Virtual Environment which is used to manage Python packages for certain project.Using Virtual Environment Avoids installing Python packages globally.
 
 ```bash
   python -m venv env
 ```
-* You need to Activate Environment once it is created use below command to cactivate it
+* You need to Activate Environment once which is created use below command to activate it
 ```bash
   env/scripts/activate
 ```
-* Once it is Activated you can Install Rasa
+* Once it is Activated you can Install RASA
 ```bash
   pip install rasa==2.8.1
 ```
-* After installing Rasa you can able to see Successful installed,we need to create Rasa Project
+* After installing RASA you are able to see the Message 'Successful installed'.
+* Create a RASA Project 
 ```bash
     rasa init
 ```
 * Choose your directory where do you want to create project 
 ![Screenshot_20230203_024408](https://user-images.githubusercontent.com/92524410/216560304-542057f7-4297-4f4a-99a2-624edc08ecc6.png)
-* You can able to see project structure of Rasa.
+* You can able to see project structure of RASA.
 
 ![image alt >](https://vivifyassets.s3.ap-south-1.amazonaws.com/image+(1).png)
 
@@ -86,13 +95,12 @@ This file contains different bot responses list all the intents and entities use
 * **Actions.py:**
 This is the python file to run the custom actions. This file can be used for an API call or database querying. When the action is "action_hello" the above code will execute and dispatches the text "Hello" as a reply.
 * **Training:**
-Bot as created a Basic project, now we can train our model based on the data that we have provided rasa will start to train both nlu and core model and then stores the trained model in the models folder by the following command 
+Bot as created a Basic project, now we can train our model based on the data that we have provided. RASA will start to train both nlu and core model and then stores the trained model in the models folder by the following command
 ```bash
   rasa train
 ```
 
-
-* Rasa will create inital project where you can able to talk to the Bot, And it will ask you to train the Intial Bot Choose "Yes".
+* RASA will create inital project where you can able to talk to the Bot, When it will ask you to train the Intial Bot: Choose "Yes".
 
 ![image](https://user-images.githubusercontent.com/92524410/216561608-b02b5938-8198-4404-96d2-99972584c777.png)
 * Model is created Successfully 
@@ -102,14 +110,14 @@ Bot as created a Basic project, now we can train our model based on the data tha
 ![image](https://user-images.githubusercontent.com/92524410/216569130-4f024f5a-3c06-4d3a-b287-97b1fa1cf7f7.png)
 
 
-- To know more about the usage of the files, i surely recommend you to refer this [link](https://rasa.com/docs/rasa/2.x/)
+- To know more about the usage of the files, i surely recommend you to refer to [RASA Docs](https://rasa.com/docs/rasa/2.x/)
 
 ### Connecting Chatbot to Different Channels
-In rasa you can connect Chatbot to different Social platforms, you can connect using Credentials.yml.
+In RASA you can connect Chatbot to different Channels using Credentials.yml.
 ![image](https://user-images.githubusercontent.com/92524410/216886817-46855453-a140-4a8b-a141-311e6f68d0bf.png)
 
-To integrate our chatbot into the  web widget, we have to enable the channel integration in "Credentials.yml",
-The SocketIO channel uses WebSockets and is real-time. To use the SocketIO channel, add the credentials to your credentials.yml
+To integrate chatbot into the  web widget, we have to enable the channel integration in "Credentials.yml".
+Here we are using SocketIO channel which uses WebSockets in real-time. To use the SocketIO channel, use below Credentials to your credentials.yml
 ```bash
 socketio:
  user_message_evt: user_uttered
@@ -118,7 +126,7 @@ socketio:
 ```
 Need to create one more file in our project that's an HTML file in this file we will be integrating our bot with a web widget
 and this web widget can be attached to the web project that you want.
-I am renaming the HTML file as an Index.html, and using a template from rasa documentation in this template javascript code is inbuilt so the onclick operations and triggering we don't need to
+I am renaming the HTML file as an Index.html, and using a template from RASA documentation in this template javascript code is inbuilt so the onclick operations and triggering we don't need to
 write the logic everything is done by rasa.
 
 There are Two widget Ui's you can use any of these Ui's
@@ -173,18 +181,24 @@ Paste this Code in Index.html
 </html>
 ```
 
-The first two configuration values define the event names used by Rasa Open Source when sending or receiving messages over socket.io.
+The first two configuration value defines the event names used by RASA Open Source when sending or receiving messages over [socket.io].
 
-Restart your Rasa Open Source server to make the new channel endpoint available to receive messages. You can then send messages to HTTP://<host>:<port>/socket.io,
- replacing the host and port with the appropriate values from your running Rasa Open Source server.
+Restart your RASA server to make the new channel endpoint available to receive messages. You can then send messages to ```http://<host>:<port>/```,
+replacing the host (i.e. localhost) and port (i.e. 5005 - its a default port for rasa) 
+  
+ ![image](https://user-images.githubusercontent.com/92524410/217512457-83a8bc9a-859e-4de8-b164-5d34ce089553.png)
 
 ### 
-Now you can run these command to see the widget as be configured correctly or not
+Now you can run these command  and Copy file path of index.html and paste it in web browser to see the chat widget
 ```bash
   rasa run -m models --enable-api --cors * 
 ```
 
-Copy index.html file path and paste it in web browser, there you can able to see the web widget.
+<div align="center"/>
+    <img src="https://user-images.githubusercontent.com/92524410/217515656-648fd520-bd2f-4a89-926d-952060e1ecf7.png" />
+    <img src="https://user-images.githubusercontent.com/92524410/217448866-4a3db819-7033-4c32-9338-a9871c2f807d.png" />
+ </div>
+
 
 ## Integration of Open API's in Rasa
 To integrate any logical operations in rasa, we need to use Actions.py file
@@ -193,7 +207,9 @@ To integrate any logical operations in rasa, we need to use Actions.py file
 <img src="https://user-images.githubusercontent.com/92524410/216952029-0b84e798-1499-4f79-8f82-f93be0e47c7d.png"/>
 </p>
 Here we are using open Api's https://apisetu.gov.in/directory/api/cowin/
+
 * Create a new file main.py and paste below code, i was making a Get call here using Lattitude and Longitude values passed by the user in Bot.
+
 ```bash
 
 import requests
@@ -221,7 +237,7 @@ area['block_name'])
 ```
 User input Values are stored using [Slots](https://rasa.com/docs/rasa/domain/).
 
-Domain.yml you can able see Slots as Longitude and Lattitude
+with Domain.yml you can able to see Slots as Longitude and Lattitude
 
 ```bash
 slots:
@@ -259,21 +275,16 @@ and the connection between slots and the actions.py was done in stories.yml and 
   - action: action_location_submit
 ```
 
-after connecting all the things you need to train the Bot again using
+after connecting all the things you need to train the Bot again
 ```bash
 rasa train
 ```
-to run actions.py you need to run seperate command
+to run actions.py you need to run actions command in seperate terminal
 ```bash
 rasa run actions
 ```
   
   <table>
-  <tr>
-    <td>Screen 1</td>
-     <td>Screen 2</td>
-     <td>Screen 3</td>
-  </tr>
 
   <tr>
     <td><img src="https://user-images.githubusercontent.com/92524410/217488188-2408a261-e098-4637-b642-b58639f0a25b.png" width=270 height=480></td>
@@ -284,7 +295,8 @@ rasa run actions
   
   
 
-So now you have connected an Open Api in rasa Chatbot Web ui, I surely recommend to refer rasa Documents for Understanding Better [Document](https://rasa.com/docs/).
+**So now you have connected an Open API in RASA Chatbot Web UI.
+For more details releated to RASA you can always refer to the latest documents and releases on Rasa.com or [Rasa Docs](https://rasa.com/docs/rasa/)**
 <p align="center">
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/cropped-vivify_login.png" margin_left="100"/>
 </p>
