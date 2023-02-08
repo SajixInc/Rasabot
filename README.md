@@ -95,7 +95,7 @@ Bot as created a Basic project, now we can train our model based on the data tha
 * Rasa will create inital project where you can able to talk to the Bot, And it will ask you to train the Intial Bot Choose "Yes".
 
 ![image](https://user-images.githubusercontent.com/92524410/216561608-b02b5938-8198-4404-96d2-99972584c777.png)
-* Model is created Successfully it will do you want to talk with the Bot
+* Model is created Successfully 
 ![image](https://user-images.githubusercontent.com/92524410/216568087-3b066cfb-7968-4b18-b7bc-abc9b190e649.png)
 
 * Choose 'Yes' to talk to the Chatbot.
@@ -108,7 +108,7 @@ Bot as created a Basic project, now we can train our model based on the data tha
 In rasa you can connect Chatbot to different Social platforms, you can connect using Credentials.yml.
 ![image](https://user-images.githubusercontent.com/92524410/216886817-46855453-a140-4a8b-a141-311e6f68d0bf.png)
 
-To integrate our chatbot into the webpage we have to enable the channel integration in "Credentials.yml",
+To integrate our chatbot into the  web widget, we have to enable the channel integration in "Credentials.yml",
 The SocketIO channel uses WebSockets and is real-time. To use the SocketIO channel, add the credentials to your credentials.yml
 ```bash
 socketio:
@@ -123,11 +123,12 @@ write the logic everything is done by rasa.
 
 There are Two widget Ui's you can use any of these Ui's
 Paste this Code in Index.html
+### Widget 1
 ```bash
 <div id="rasa-chat-widget" data-websocket-url="https://localhost:5005/"></div>
 <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
 ```
-
+### Widget 2
 ```bash
   <html>
   <head>
@@ -139,7 +140,6 @@ Paste this Code in Index.html
       .rw-conversation-container .rw-reply{background-color: hsl(250, 69%, 61%); border: 1px solid hsl(250, 69%, 61%);}
   </style>
   </head>
-   
     <body>
         <script>!(function () {
             let e = document.createElement("script"),
@@ -189,9 +189,9 @@ Copy index.html file path and paste it in web browser, there you can able to see
 ## Integration of Open API's in Rasa
 To integrate any logical operations in rasa, we need to use Actions.py file
 
-
-![image](https://user-images.githubusercontent.com/92524410/216952029-0b84e798-1499-4f79-8f82-f93be0e47c7d.png)
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92524410/216952029-0b84e798-1499-4f79-8f82-f93be0e47c7d.png"/>
+</p>
 Here we are using open Api's https://apisetu.gov.in/directory/api/cowin/
 * Create a new file main.py and paste below code, i was making a Get call here using Lattitude and Longitude values passed by the user in Bot.
 ```bash
@@ -267,6 +267,22 @@ to run actions.py you need to run seperate command
 ```bash
 rasa run actions
 ```
+  
+  <table>
+  <tr>
+    <td>Screen 1</td>
+     <td>Screen 2</td>
+     <td>Screen 3</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/92524410/217488188-2408a261-e098-4637-b642-b58639f0a25b.png" width=270 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/92524410/217448866-4a3db819-7033-4c32-9338-a9871c2f807d.png" width=270 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/92524410/217448884-0aca13f9-cde8-473c-9a0c-64fee34fa10d.png" width=270 height=480></td>
+  </tr>
+ </table>
+  
+  
 
 So now you have connected an Open Api in rasa Chatbot Web ui, I surely recommend to refer rasa Documents for Understanding Better [Document](https://rasa.com/docs/).
 <p align="center">
