@@ -2,7 +2,7 @@
 
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/lifeeazy-logo1.png" align="right" width="250"/> <img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png" width="180"/> 
 
-<h1 font-size="50px" align="center">Sample RASA Webui Chatbot with API connection </h1>
+<h1 font-size="50px" align="center">Sample RASA Chatbot with Web UI & API Connectivity</h1>
 
 RASA is an open-source machine learning framework for automated text and voice-based conversations. Understand messages, hold conversations, and connect to messaging channels and APIs.
 It's incredibly powerful and is used by developers worldwide to create chatbots and contextual assistants. Before we get into Installation, let's look into some simple concepts that we should know while creating a chatbot.
