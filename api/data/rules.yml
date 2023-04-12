@@ -2,64 +2,30 @@ version: "2.0"
 
 rules:
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Say goodbye 
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-- rule: Activate pincode form
+  - intent: greet
+  - action: utter_greet
+  - action: utter_welcome_image
+  - action: utter_welcome_message
+  - action: utter_buttons
+  
+- rule: covid 
   steps:
-  - intent: pincode
-  - action: slot_pincode_form
-  - active_loop: slot_pincode_form
+  - intent: search
+  - action: slot_for_covid_info
+  - active_loop: slot_for_covid_info
 
-- rule: Submit pincode form
+- rule: Submit query form
   condition:
-  # Condition that form is active.
-  - active_loop: slot_pincode_form
+  - active_loop: slot_for_covid_info
   steps:
-  # Form is deactivated
-  - action: slot_pincode_form
+  - action: slot_for_covid_info
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_pincode_submit
+  - action: get_info
 
-- rule: Activate district form
-  steps:
-  - intent: district
-  - action: slot_district_form
-  - active_loop: slot_district_form
 
-- rule: Submit district form
-  condition:
-  # Condition that form is active.
-  - active_loop: slot_district_form
-  steps:
-  # Form is deactivated
-  - action: slot_district_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_district_submit
 
-- rule: Activate location form
-  steps:
-  - intent: location
-  - action: slot_location_form
-  - active_loop: slot_location_form
 
-- rule: Submit location form
-  condition:
-  # Condition that form is active.
-  - active_loop: slot_location_form
-  steps:
-  # Form is deactivated
-  - action: slot_location_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_location_submit
