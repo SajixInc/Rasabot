@@ -2,7 +2,7 @@ import requests
 import webbrowser
 import json
 def get_details(query):
-    Api = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyAf9Po1YJtv7JTdQGVj_qCX1ZKYd2I0_u0&cx=31bfd5557d3024a45&q={}'.format(query)
+    Api = 'https://www.googleapis.com/customsearch/v1?key=(API Key)&cx=(search engine ID)={}'.format(query)
     response = requests.get(url=Api)
     print(response)
     count=response.json()['queries']['request'][0]['count']
