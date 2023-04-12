@@ -297,6 +297,181 @@ rasa run actions
 
 **So now you have connected an Open API in RASA Chatbot Web UI.
 For more details releated to RASA you can always refer to the latest documents and releases on Rasa.com or [Rasa Docs](https://rasa.com/docs/rasa/)**
+
+
+
+
+## Google Search Engine Using RASA
+
+
+
+
+<img src="https://kvliveblog.files.wordpress.com/2013/02/make-google-default-search-engine-icon.png" align="right" height=100 width="250">
+
+
+<img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png"
+align="left" height =100 width="180" > 
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div padding-top=100px><h1 align="left">About Google search engine:</h1></div>
+
+Google Search Engine was launched in 1998 and quickly became the most popular search engine in the world due to its accuracy, speed, and ease of use. The most popular search engine is Google, but there are many others, such as Bing, Yahoo, and DuckDuckGo.
+
+Google Search Engine is a search engine developed and operated by Google. It is a web-based search tool that allows users to find information on the World Wide Web.
+
+
+## Advantages of Google search engine:
+  * Results are measurable
+  * Helps to Grow Your Small Business
+  * get fast website Traffic and conversions
+  * You can search whatever you want
+  * Google provides better and easier results
+
+
+## features of Google search engine:
+  * Query processing
+  * Search filters
+  * Personalization
+  * Advertising    
+    
+
+## How To Create gooogle search engine account:
+    first we need to create google search engine account 
+use this link to create google search engine account : 
+[Click Here](https://programmablesearchengine.google.com)
+
+After created account successfully. It will show like this 
+    
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/search+engine.png" width="500">
+
+Then open the search engine it looks like this
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/SE+ID.png" width="500">
+
+Their is an "overview" option at the left side of the page. Their is name like "search features" option in that search features their is an "sites to search" in that option we have to add our required "web sites" to get the Result.
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/sites+to+search.png" width="500">
+
+
+## How To Generate API Key:
+    To generate the API Key we need to refer the Documentation.
+Documentation Link: 
+    [Click Here](https://developers.google.com/custom-search/docs/overview)
+
+After open the Documentation go to "Using REST" at the left bottom of the page.
+
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/API+Key.png" width="500">
+
+
+Their is a JSON API URI in  "Making a request" that is the API Key.
+
+
+It's Looks like this : https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures
+
+
+To Access this API Key we need to provide three keys:
+
+* API Key
+* Programmable search engine ID
+* Query
+
+
+* API Key : To generate an API Key  go to the "Introduction" at  the left bottom of the page of google documentation. 
+                Their is a Button like "Get a Key" click on it and it will generate the Key. 
+      
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/Introduction.png" width="500">
+
+* Programmable search engine ID : we can find the search engine ID in the account which is already created before.           
+
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/SE+ID.png" width="500">
+    
+* Query : query is nothing but it's our requirement. we have to enter our query regarding our problem.
+
+
+
+Place the Above keys in this API (https://www.googleapis.com/customsearch/v1?key=( API Key)&cx=( programmable search engine ID)=(Query))
+
+
+    Now we are successfully generated the API.
+
+
+After successfully generate the API Use this API in RASA.
+
+## How to use the API in RASA
+
+After successfully installation of RASA. 
+
+If Any doubts about installation of RASA refer this Documentation [Click Here](https://rasa.com/docs/rasa/2.x/installation)
+
+
+Create one Python file in that .py file use this API.
+
+Here is an Example code for how to use the API in .py file
+
+    import requests
+    import webbrowser
+    import json
+
+    def get_details(query):
+        Api = 'https://www.googleapis.com/customsearch/v1?key=(API Key)&cx=(programmable search engine ID)={}'.format(query)
+        response = requests.get(url=Api)
+        print(response)
+        count=response.json()['queries']['request'][0]['count']
+        title=response.json()['items'][0]['link']
+        print(title)
+        print(count)
+        message=""
+        if count<5:
+            for i in range(count):
+                link=response.json()['items'][i]['link']
+                title=response.json()['items'][i]['title']
+                link1 = link + '\n'
+                message +='['+title+']'+'('+link1+')' + '\n' + '\n'
+            return message
+
+        else:
+            for i in range(5):
+                link=response.json()['items'][i]['link']
+                title=response.json()['items'][i]['title']
+                link1 = link + '\n'
+                message +='['+title+']'+'('+link1+')' + '\n' + '\n'
+            return message
+
+
+## Commands to Run the code:
+This command is used to train the models.
+
+    rasa train
+
+This command is used to run the models.
+
+    rasa run --enable-api --cors "*"
+
+This command is used to run the actions.
+
+    rasa run actions
+Note: rasa run actions are run in separate "powershell"
+
+
+Note: Copy file path of index.html and paste it in web browser to see the chat widget
+
+## Output
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/output.png" width="500">
+
+
+<hr>
+
 <p align="center">
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/cropped-vivify_login.png" margin_left="100"/>
 </p>
+
+
+
