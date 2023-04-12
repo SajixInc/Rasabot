@@ -301,7 +301,13 @@ For more details releated to RASA you can always refer to the latest documents a
 
 
 
+
 ## Google Search Engine Using RASA
+
+
+
+## <h1>Customized Google Search Engine By Using RASA</h1>
+3-programmable-google-search-integration-with-rasa
 
 
 
@@ -320,7 +326,11 @@ align="left" height =100 width="180" >
 
 
 
+
 <div padding-top=100px><h1 align="left">About Google search engine:</h1></div>
+
+<div padding-top=100px><h2 align="left">About Google search engine:</h2></div>
+ 3-programmable-google-search-integration-with-rasa
 
 Google Search Engine was launched in 1998 and quickly became the most popular search engine in the world due to its accuracy, speed, and ease of use. The most popular search engine is Google, but there are many others, such as Bing, Yahoo, and DuckDuckGo.
 
@@ -349,6 +359,7 @@ use this link to create google search engine account :
 
 After created account successfully. It will show like this 
     
+
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/search+engine.png" width="500">
 
 Then open the search engine it looks like this
@@ -358,6 +369,17 @@ Then open the search engine it looks like this
 Their is an "overview" option at the left side of the page. Their is name like "search features" option in that search features their is an "sites to search" in that option we have to add our required "web sites" to get the Result.
 
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/sites+to+search.png" width="500">
+=======
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/search+engine.png">
+
+Then open the search engine it looks like this
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/SE+ID+2.png">
+
+Their is an "overview" option at the left side of the page. Their is name like "search features" option in that search features their is an "sites to search" in that option we have to add our required "web sites" to get the Result.
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/sites+to+search.png">
+ 3-programmable-google-search-integration-with-rasa
 
 
 ## How To Generate API Key:
@@ -367,7 +389,11 @@ Documentation Link:
 
 After open the Documentation go to "Using REST" at the left bottom of the page.
 
+
 <img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/API+Key.png" width="500">
+
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/API+Key.png">
+ 3-programmable-google-search-integration-with-rasa
 
 
 Their is a JSON API URI in  "Making a request" that is the API Key.
@@ -386,11 +412,19 @@ To Access this API Key we need to provide three keys:
 * API Key : To generate an API Key  go to the "Introduction" at  the left bottom of the page of google documentation. 
                 Their is a Button like "Get a Key" click on it and it will generate the Key. 
       
+
 <img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/Introduction.png" width="500">
 
 * Programmable search engine ID : we can find the search engine ID in the account which is already created before.           
 
 <img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/SE+ID.png" width="500">
+=======
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/Introduction.png">
+
+* Programmable search engine ID : we can find the search engine ID in the account which is already created before.It's looks like           
+
+<img src= "https://vivifyassets.s3.ap-south-1.amazonaws.com/SE+ID+2.png">
+ 3-programmable-google-search-integration-with-rasa
     
 * Query : query is nothing but it's our requirement. we have to enter our query regarding our problem.
 
@@ -457,6 +491,7 @@ This command is used to run the models.
 This command is used to run the actions.
 
     rasa run actions
+
 Note: rasa run actions are run in separate "powershell"
 
 
@@ -466,6 +501,18 @@ Note: Copy file path of index.html and paste it in web browser to see the chat w
 
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/output.png" width="500">
 
+
+<b>Note</b>: rasa run actions are run in separate "powershell"
+
+
+<b>Note</b>: Copy file path of index.html and paste it in web browser to see the chat widget
+
+## Output
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/output.png">
+
+<b>Note</b>: Here is the Top 5 Links we are getting from the Google.
+ 3-programmable-google-search-integration-with-rasa
 
 <hr>
 
