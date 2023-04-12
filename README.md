@@ -303,7 +303,7 @@ For more details releated to RASA you can always refer to the latest documents a
 
 
 
-## <h1>Google Search Engine By Using RASA</h1>
+## <h1>Customized Google Search Engine By Using RASA</h1>
 
 
 
@@ -459,15 +459,16 @@ This command is used to run the models.
 This command is used to run the actions.
 
     rasa run actions
-Note: rasa run actions are run in separate "powershell"
+<b>Note</b>: rasa run actions are run in separate "powershell"
 
 
-Note: Copy file path of index.html and paste it in web browser to see the chat widget
+<b>Note</b>: Copy file path of index.html and paste it in web browser to see the chat widget
 
 ## Output
 
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/vasu/output.png">
 
+<b>Note</b>: Here is the Top 5 Links we are getting from the Google.
 
 <hr>
 
