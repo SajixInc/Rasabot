@@ -83,7 +83,7 @@ class chat_botState extends State<chat_bot> {
                       },
                       decoration: const InputDecoration(
                           icon: Icon(Icons.message),
-// madhu
+
                           hintText: 'Say "Hi" to start the conversation'),
                     ),
                   ),
