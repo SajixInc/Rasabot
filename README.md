@@ -1,7 +1,7 @@
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/TechStack_final.png" align="right" width="250"/> 
 <img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png" width="180"/> 
 
-<h1 font-size="50px" align="center">RASA Chatbot with Custom UI In Mobile App(Flutter)</h1>
+<h1 font-size="50px" align="center">RASA Chatbot with Custom UI In Mobile App With GetX(Flutter)</h1>
 
  <strong> About : </strong>
 
@@ -18,7 +18,7 @@
 
 <strong> Purpose : </strong>  
 
-Creation of Custom UI to overcome challenges for implementing enhnaced featurers and functionalities; i.e. media upload, calandar selction, Search in chatbot, which is sometimes difficult or unmanaggable in third party UI's
+Creation of Custom UI to overcome challenges for implementing enhanced features and functionalities; i.e. media upload, calendar selection, Search in chatbot, which is sometimes difficult or unmanageable in third party UI's.
 
 <strong> Requirements : </strong>
 
@@ -33,11 +33,11 @@ You can visit the official Dart website [Dart SDK](https://dart.dev/guides).
 
 - Android Studio: At the time of my knowledge cutoff, Android Studio 4.2+ was the latest stable version.you can visit the official Android Studio website [Andriod studio](https://developer.android.com/studio).
 
-- Take a Bot URL that should be in webhooks. For example, ``http://ivinbot.vivifyhealthcare.com/:0000/webhooks/rest/webhook`` .
+- Take a Bot URL that should be in webhooks. For example, ``http://ivinbot.vivifyhealthcare.com/:xxxx/webhooks/rest/webhook`` .
 Please replace with your webhook URL for the BOT.
 
 ```
-NOTE : This Custom UI in Flutter is compatible with the "Provider State Managmenmet".
+NOTE : This Custom UI in Flutter is compatible with the "GetX State Managmenmet".
 ```
 
 <strong> Process : </strong>
@@ -84,5 +84,5 @@ if you want to change the bubble widget, by changing below code.
     );
   }
  ```
-  - We are classifying the buttons, images and text in the method of getresponse from the Bot URL and those responses are adding to the list and we are calling the UI in setstate method to refresh the screen by the refrence of the list.
+  - We are classifying the buttons, images and text in the method of getresponse from the Bot URL and those responses are adding to the list.
   

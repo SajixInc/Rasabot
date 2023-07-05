@@ -4,37 +4,33 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:rasa_bot_flutter/chat_bot_controller.dart';
 
 var year = DateFormat('yyyy').format(DateTime.now());
-var now_sender = DateTime.now();
 
-class chat_bot extends StatefulWidget {
-  const chat_bot({Key? key}) : super(key: key);
+class BotScreen extends StatefulWidget {
+  const BotScreen({Key? key}) : super(key: key);
 
   @override
-  State<chat_bot> createState() => chat_botState();
+  State<BotScreen> createState() => screenState();
 }
 
-class chat_botState extends State<chat_bot> {
+class screenState extends State<BotScreen> {
   final GlobalKey<AnimatedListState> _listkey = GlobalKey();
   final List<String> _data = [];
 
   static const String Bot_URL =
-      'http://ivinbot.vivifyhealthcare.com:5005/webhooks/rest/webhook';
+      'http://ivinbot.vivifyhealthcare.com:0000/webhooks/rest/webhook';
+  // Please replace with your webhook URL for the BOT.
+  chat_bot_controller controller = chat_bot_controller();
   TextEditingController querycontroller = TextEditingController();
   ScrollController scrollController = ScrollController();
   late ScrollController _scrollController;
+  List response_list = [];
 
   @override
   void initState() {
-    _scrollController = ScrollController()
-      ..addListener(() {
-        setState(() {
-          if (_scrollController.offset >= 400) {
-          } else {}
-        });
-      });
+    _scrollController = ScrollController()..addListener(() {});
     super.initState();
   }
 
@@ -49,6 +45,7 @@ class chat_botState extends State<chat_bot> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          actions: [],
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -83,8 +80,7 @@ class chat_botState extends State<chat_bot> {
                       },
                       decoration: const InputDecoration(
                           icon: Icon(Icons.message),
-
-                          hintText: 'Say "Hi" to start the conversation'),
+                          hintText: 'Say "Hi" to start conversation'),
                     ),
                   ),
                 ),
@@ -100,12 +96,10 @@ class chat_botState extends State<chat_bot> {
                           duration: const Duration(seconds: 2),
                           curve: Curves.bounceIn);
                     },
-                    child: const Icon(Icons.send)))
+                    child: const Icon(Icons.send))),
           ],
         ));
   }
-
-  List response_list = [];
 
   getrespose(msg, name) async {
     print("msg");
@@ -116,8 +110,8 @@ class chat_botState extends State<chat_bot> {
     var client = http.Client();
     var url = Uri.parse(Bot_URL);
 
-    var dataMessage =
-    jsonEncode({'message': msg, "sender": now_sender.toString()});
+    var dataMessage = jsonEncode(
+        {'message': msg, 'sender': controller.now_sender.toString()});
     var response = await client.post(url, body: dataMessage);
     print((response.statusCode));
     int lenRespo = ((jsonDecode(response.body)).length);
@@ -170,14 +164,14 @@ class chat_botState extends State<chat_bot> {
           alignment: mine ? Alignment.topLeft : Alignment.topRight,
           child: mine
               ? Container(
-            color: mine ? Colors.white : Colors.blue,
-            child: mg(item, index),
-          )
+                  color: mine ? Colors.white : Colors.blue,
+                  child: mg(item, index),
+                )
               : Bubble(
-            alignment: Alignment.topRight,
-            color: Colors.white,
-            child: mg(item, index),
-          )),
+                  alignment: Alignment.topRight,
+                  color: Colors.white,
+                  child: mg(item, index),
+                )),
     );
   }
 
@@ -191,16 +185,16 @@ class chat_botState extends State<chat_bot> {
           imageUrl: item.replaceAll('<bot>', ''),
           placeholder: (context, url) => const CircularProgressIndicator(),
           errorWidget: (context, url, error) => TextButton(
-            onPressed: () {
-              final uri = Uri.parse(url);
-              _launchUrl(uri);
-            },
-            child: Text(url,
-                style: const TextStyle(
-                    decoration: TextDecoration.underline,
-                    color: Colors.blue,
-                    fontSize: 17.0)),
-          ));
+                onPressed: () {
+                  final uri = Uri.parse(url);
+                  // _launchUrl(uri);
+                },
+                child: Text(url,
+                    style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue,
+                        fontSize: 17.0)),
+              ));
     } else if (btn == true) {
       var btnText = item.replaceAll('@', '');
       var btnText2 = (btnText.replaceAll('<bot>', ''));
@@ -216,7 +210,7 @@ class chat_botState extends State<chat_bot> {
           },
           style: ButtonStyle(
               overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                    (Set<MaterialState> states) {
+                (Set<MaterialState> states) {
                   if (states.contains(MaterialState.pressed)) {
                     return Colors.green.shade800;
                   }
@@ -224,7 +218,7 @@ class chat_botState extends State<chat_bot> {
                 },
               ),
               backgroundColor:
-              MaterialStateColor.resolveWith((states) => Colors.white),
+                  MaterialStateColor.resolveWith((states) => Colors.white),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(23.0),
@@ -244,15 +238,11 @@ class chat_botState extends State<chat_bot> {
         child: Text(
           item.replaceAll('<bot>', ''),
           style:
-          const TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
         ),
       );
     }
   }
 }
 
-Future<void> _launchUrl(url) async {
-  if (!await launchUrl(url)) {
-    throw Exception('Could not launch $url');
-  }
-}
+
