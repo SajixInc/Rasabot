@@ -21,7 +21,8 @@ class chat_botState extends State<chat_bot> {
   final List<String> _data = [];
 
   static const String Bot_URL =
-      'http://ivinbot.vivifyhealthcare.com:5005/webhooks/rest/webhook';
+      'http://ivinbot.vivifyhealthcare.com:0000/webhooks/rest/webhook';
+  // please replace port number with your's webhook bot url
   TextEditingController querycontroller = TextEditingController();
   ScrollController scrollController = ScrollController();
   late ScrollController _scrollController;
