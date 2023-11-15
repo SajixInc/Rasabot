@@ -1,302 +1,111 @@
 
 
-<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/lifeeazy-logo1.png" align="right" width="250"/> <img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png" width="180"/> 
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/TechStack-VivifyHealthcare.png" align="right" width="250"/> <img src="https://user-images.githubusercontent.com/92524410/217502426-8454bf20-7da8-4536-a049-a6bb7e96b09a.png" width="180"/> 
 
-<h1 font-size="50px" align="center">Sample RASA Chatbot with Web UI & API Connectivity</h1>
-
-RASA is an open-source machine learning framework for automated text and voice-based conversations. Understand messages, hold conversations, and connect to messaging channels and APIs.
-It's incredibly powerful and is used by developers worldwide to create chatbots and contextual assistants. Before we get into Installation, let's look into some simple concepts that we should know while creating a chatbot.
-<div align="center">
-  
-  <img src="https://img.shields.io/badge/Python-3.7-yellowgreen" />
-    <img src="https://img.shields.io/badge/Rasa-2.8.1-blueviolet" />
-    <img src="https://img.shields.io/badge/Release-1.0.0-blue" />
-  </div>
-  
-<div align="center">
- <img  src="https://vivifyassets.s3.ap-south-1.amazonaws.com/ezgif.com-gif-maker.gif" />
-  
-</div>
+# Boolean-data-true/false-handling-from-api-with-intents
 
 
+The release of [**Rasa Chatbot** ](https://github.com/vivifyhealthcare/Rasabot/edit/7-boolean-data-truefalse-handling-from-api-with-intents/README.md) with Api integration for Boolean-data-true/false-handling-from-api-with-intents at [**Vivify Healthcare** ](https://vivifyhealthcare.com/)  is part of the company's research and development efforts to find the best technology stack that is both sustainable and affordable.
+The company constantly looks for ways to improve its offerings and stay ahead of the curve in the highly competitive healthcare industry. Utilizing the leading and open-source platform for transforming; how people interact with people/organizations through extensible conversational AI via RASA, Vivify Healthcare aims to deliver a top-notch user experience while keeping costs low and maintaining stability, security, and compliance.
 
-## Features
+Repository https://github.com/vivifyhealthcare/Rasabot/edit/7-boolean-data-truefalse-handling-from-api-with-intents/README.md
 
-- Sample Bot
-- API Connectivity
-- Fullscreen mode
-- Show Image(Display Immage)
-- Change Chatbot Avatar
+Handling boolean data and defining how true and false values are handled in the context of API intents.
 
 
-## Development Environment (Local)
-#### System Requirements
-💻 Supported Os:
-* Ubuntu (18.04/20.04)
-* Windows
-* Mac Os
-* CentOS (7/8)
-* Red Hat Enterprise Linux
+# Benfits of Boolean
 
-⚙️Hardware Requirements:
+Clarity and Expressiveness: By using boolean values in your API intents, you make the purpose and expected behavior of the API endpoint clear and intuitive. Developers and users can easily understand the intent behind the request, such as turning a feature Yes (true) or No (false).
 
-###### Minimum Requirements
-* Dual Core CPU / Quad Core CPU
-* 8 GB RAM/ 16 GB RAM
-* 20 GB / 50 GB Free Disk Space
+Simplified and Consistent API Design: Boolean values simplify the design of your API by reducing the need for complex input parameters or multiple endpoints to handle different scenarios. It promotes a more consistent and straightforward API structure.
 
-💡 Before you begin, make sure you have the following installed:
-- Python - 3.7.5
-- Visual Studio
-- Git
+Reduced Cognitive Load: When developers work with your API, they don't need to remember specific parameter names or values for various actions. Using boolean values simplifies the decision-making process, reducing cognitive load.
 
-[**Check Installation Requirement for RASA** ](https://rasa.com/docs/rasa-enterprise/1.0.x/installation-and-setup/requirements/)
-## Getting Started With Local Development
+# Procedure to boolean data true or false handling
 
+**Intents:** Make sure to train your chatbot with examples of user messages that correspond to these intents. The training data should cover various ways users might express these intentions.
 
-## Installation
-* Open Visual Studio and go to Terminal and run the following command
-* First check your Python Version installed in your System
+**Responses:** Customize the responses for each intent to make your bot's interactions more engaging and informative. You can add text, images, buttons, or other content to your responses.
 
-```bash
-  python --version
-```
-* You need to create Virtual Environment which is used to manage Python packages for certain project.Using Virtual Environment Avoids installing Python packages globally.
+**Slots:** Slots are crucial for storing and tracking user-provided information throughout the conversation. Depending on the conversation flow, you may need to fill and use slots within your dialogue management.
 
-```bash
-  python -m venv env
-```
-* You need to Activate Environment once which is created use below command to activate it
-```bash
-  env/scripts/activate
-```
-* Once it is Activated you can Install RASA
-```bash
-  pip install rasa==2.8.1
-```
-* After installing RASA you are able to see the Message 'Successful installed'.
-* Create a RASA Project 
-```bash
-    rasa init
-```
-* Choose your directory where do you want to create project 
-![Screenshot_20230203_024408](https://user-images.githubusercontent.com/92524410/216560304-542057f7-4297-4f4a-99a2-624edc08ecc6.png)
-* You can able to see project structure of RASA.
+**Forms:** Forms help in structured data collection from the user. You should define the validation rules for slots in your forms and specify how to activate and deactivate them during the conversation flow.
 
-![image alt >](https://vivifyassets.s3.ap-south-1.amazonaws.com/image+(1).png)
+**Actions:** Implement the custom logic for your actions. These actions can include making API calls, database operations, or other business logic based on the collected information or user interactions.
 
+# Rules:
 
-* **nlu.yml:**
-This file contains the possible messages from the user and the corresponding intent. This file is used for creating the intent classification model. Whenever the user inputs a message, the classification model automatically classifies the intent of the message.
-* **Stories.yml:**
-It contains different possible sample interactions between the user and the chatbot. With this sample, the bot will get an idea about what would be the possible reply for user input.
-* **Domain.yml:**
-This file contains different bot responses list all the intents and entities used while creating the nlu.yml file.
-* **Actions.py:**
-This is the python file to run the custom actions. This file can be used for an API call or database querying. When the action is "action_hello" the above code will execute and dispatches the text "Hello" as a reply.
-* **Training:**
-Bot as created a Basic project, now we can train our model based on the data that we have provided. RASA will start to train both nlu and core model and then stores the trained model in the models folder by the following command
-```bash
-  rasa train
-```
+In Rasa, rules are used to define specific conversation flows and dictate how the chatbot should respond to certain user intents or conditions. Rules provide a structured way to handle conversations in a more deterministic manner compared to machine learning-based intent recognition. Here's what you can do with rules in a Rasa bot:
 
-* RASA will create inital project where you can able to talk to the Bot, When it will ask you to train the Intial Bot: Choose "Yes".
+# How to convert to Boolean in rasa
 
-![image](https://user-images.githubusercontent.com/92524410/216561608-b02b5938-8198-4404-96d2-99972584c777.png)
-* Model is created Successfully 
-![image](https://user-images.githubusercontent.com/92524410/216568087-3b066cfb-7968-4b18-b7bc-abc9b190e649.png)
+**Boolean Data:** Boolean data is a data type that represents one of two values: true or false. It's commonly used to represent binary decisions, such as yes/no. In programming, boolean data is often used for conditional statements and logic.
 
-* Choose 'Yes' to talk to the Chatbot.
-![image](https://user-images.githubusercontent.com/92524410/216569130-4f024f5a-3c06-4d3a-b287-97b1fa1cf7f7.png)
+**True and False Values:** In the context of boolean data, "true" represents a positive or affirmative condition, and "false" represents a negative or negative condition. For example, "thease details are correct" can be represented as either "true" (yes) or "false" (no).
 
+**API Intents:** APIs (Application Programming Interfaces) can define various intents to specify the actions or operations they support. An intent represents the purpose of a request made to the API, allowing developers to interact with the API based on specific intentions.
 
-- To know more about the usage of the files, i surely recommend you to refer to [RASA Docs](https://rasa.com/docs/rasa/2.x/)
+**Handling Boolean Data with API Intents:**
+When you're designing API endpoints or requests that involve boolean data, you can define intents that correspond to the actions you want to perform with that data.
 
-### Connecting Chatbot to Different Channels
-In RASA you can connect Chatbot to different Channels using Credentials.yml.
-![image](https://user-images.githubusercontent.com/92524410/216886817-46855453-a140-4a8b-a141-311e6f68d0bf.png)
+# Boolean-data-truefalse-handling-from-api-with-intents
 
-To integrate chatbot into the  web widget, we have to enable the channel integration in "Credentials.yml".
-Here we are using SocketIO channel which uses WebSockets in real-time. To use the SocketIO channel, use below Credentials to your credentials.yml
-```bash
-socketio:
- user_message_evt: user_uttered
- bot_message_evt: bot_uttered
- session_persistence: true
-```
-Need to create one more file in our project that's an HTML file in this file we will be integrating our bot with a web widget
-and this web widget can be attached to the web project that you want.
-I am renaming the HTML file as an Index.html, and using a template from RASA documentation in this template javascript code is inbuilt so the onclick operations and triggering we don't need to
-write the logic everything is done by rasa.
+Handling boolean data and defining how true and false values are handled in the context of API intents.
 
-There are Two widget Ui's you can use any of these Ui's
-Paste this Code in Index.html
-### Widget 1
-```bash
-<div id="rasa-chat-widget" data-websocket-url="https://localhost:5005/"></div>
-<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
-```
-### Widget 2
-```bash
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-    <style>
-      .rw-conversation-container .rw-header{background-color:hsl(250, 69%, 61%);}
-      .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: hsl(250, 69%, 61%);}
-      .rw-launcher{background-color: hsl(250, 69%, 61%);}
-      .rw-conversation-container .rw-reply{background-color: hsl(250, 69%, 61%); border: 1px solid hsl(250, 69%, 61%);}
-  </style>
-  </head>
-    <body>
-        <script>!(function () {
-            let e = document.createElement("script"),
-              t = document.head || document.getElementsByTagName("head")[0];
-            (e.src =
-              "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
-              (e.async = !0),
-              (e.onload = () => {
-                window.WebChat.default(
-                  {
-                    customData: { language: "en" },
-                    socketUrl: "http://localhost:5005/",
-                    title: 'Lifeeazy',
-                    subtitle: 'Say hi and get started!',
-                    initPayload: '/greet',
-                    profileAvatar: "https://img.icons8.com/fluency/344/chatbot.png",
-                    openLauncherImage: "./assets/svg/comment.svg",
-                    closeImage: "./assets/svg/down.svg",
-                    showMessageDate: true,
-                    inputTextFieldHint: "Type 'Hi' to start the conversation",
-                    embedded: true,
-                  },
-                  null
-                );
-              }),
-              t.insertBefore(e, t.firstChild);
-          })();
-          localStorage.clear();
-          </script>
-    </body>
-</html>
-```
+# Benfits of Boolean
 
-The first two configuration value defines the event names used by RASA Open Source when sending or receiving messages over [socket.io].
+**Clarity and Expressiveness:** By using boolean values in your API intents, you make the purpose and expected behavior of the API endpoint clear and intuitive. Developers and users can easily understand the intent behind the request, such as turning a feature Yes (true) or No (false).
 
-Restart your RASA server to make the new channel endpoint available to receive messages. You can then send messages to ```http://<host>:<port>/```,
-replacing the host (i.e. localhost) and port (i.e. 5005 - its a default port for rasa) 
-  
- ![image](https://user-images.githubusercontent.com/92524410/217512457-83a8bc9a-859e-4de8-b164-5d34ce089553.png)
+**Simplified and Consistent API Design:** Boolean values simplify the design of your API by reducing the need for complex input parameters or multiple endpoints to handle different scenarios. It promotes a more consistent and straightforward API structure.
 
-### 
-Now you can run these command  and Copy file path of index.html and paste it in web browser to see the chat widget
-```bash
-  rasa run -m models --enable-api --cors * 
-```
+**Reduced Cognitive Load:** When developers work with your API, they don't need to remember specific parameter names or values for various actions. Using boolean values simplifies the decision-making process, reducing cognitive load.
 
-<div align="center"/>
-    <img src="https://user-images.githubusercontent.com/92524410/217515656-648fd520-bd2f-4a89-926d-952060e1ecf7.png" />
-    <img src="https://user-images.githubusercontent.com/92524410/217448866-4a3db819-7033-4c32-9338-a9871c2f807d.png" />
- </div>
+# Procedure to boolean data true or false handling
+
+## domain.yml
+
+**Intents:** Make sure to train your chatbot with examples of user messages that correspond to these intents. The training data should cover various ways users might express these intentions.
+
+**Responses:** Customize the responses for each intent to make your bot's interactions more engaging and informative. You can add text, images, buttons, or other content to your responses.
+
+**Slots:** Slots are crucial for storing and tracking user-provided information throughout the conversation. Depending on the conversation flow, you may need to fill and use slots within your dialogue management.
+
+**Forms:** Forms help in structured data collection from the user. You should define the validation rules for slots in your forms and specify how to activate and deactivate them during the conversation flow.
+
+**Actions:** Implement the custom logic for your actions. These actions can include making API calls, database operations, or other business logic based on the collected information or user interactions.
+
+## rules.yml:
+
+In Rasa, rules are used to define specific conversation flows and dictate how the chatbot should respond to certain user intents or conditions. Rules provide a structured way to handle conversations in a more deterministic manner compared to machine learning-based intent recognition. Here's what you can do with rules in a Rasa bot:
+
+# How to convert to Boolean in rasa
+
+## actions.py
+
+**Boolean Data:** Boolean data is a data type that represents one of two values: true or false. It's commonly used to represent binary decisions, such as yes/no. In programming, boolean data is often used for conditional statements and logic.
+
+**True Values and False Values:** In the context of boolean data, "true" represents a positive or affirmative condition, and "false" represents a negative or negative condition. For example, "thease details are correct" can be represented as either "true" (yes) or "false" (no).
+
+**API Intents:** APIs (Application Programming Interfaces) can define various intents to specify the actions or operations they support. An intent represents the purpose of a request made to the API, allowing developers to interact with the API based on specific intentions.
+
+**Handling Boolean Data with API Intents:**
+When you're designing API endpoints or requests that involve boolean data, you can define intents that correspond to the actions you want to perform with that data.
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/endpoint+tech+re.png">
+
+If you want to run RASA chat bot you have to clone the repository and you have to replace what you designed the endpoint.
+
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/boolen+buttons+tech.png">
 
 
-## Integration of Open API's in Rasa
-To integrate any logical operations in rasa, we need to use Actions.py file
+When we have click the yes/no button it will show in "is this correct" field as a true/false. 
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/92524410/216952029-0b84e798-1499-4f79-8f82-f93be0e47c7d.png"/>
-</p>
-Here we are using open Api's https://apisetu.gov.in/directory/api/cowin/
+"
+<img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/get+data+final.png">
 
-* Create a new file main.py and paste below code, i was making a Get call here using Lattitude and Longitude values passed by the user in Bot.
+Till now what we have to give the data we have to use that data for the post as wells as get to visual. When we have to enter all the details it will ask "IS THIS CORRECT" filed, there it shows "YES/NO" value. When we have to choose "YES" value then the data shows "TRUE" as well as if we choose "NO" value then the data shows "FALSE".
 
-```bash
 
-import requests
-
-def Dose_Availability_Lon_Lat(Lattitude,Longitude):
-    api="https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat={}&long={}".format(Lattitude,Longitude)
-    return main_task(api)
-
-def main_task(api):
-    response=requests.get(api)
-    data=response.json()['centers']
-    output="*"*30
-    # print(data)
-    for area in data:
-        output+="  Hospital Name:" + area['name'] + "*"*30 +"\n"
-        output+='''\
-pincode: {}
-state_name: {}
-district_name : {}
-block_name : {}
-'''.format(area['pincode'],area['state_name'],area['district_name',
-area['block_name'])
-            output+="*"*30
-    return output
-```
-User input Values are stored using [Slots](https://rasa.com/docs/rasa/domain/).
-
-with Domain.yml you can able to see Slots as Longitude and Lattitude
-
-```bash
-slots:
-  lattitude:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  longitude:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-```
-and the connection between slots and the actions.py was done in stories.yml and rules.yml
-
-```bash
-  - rule: Activate location form
-  steps:
-  - intent: location
-  - action: slot_location_form
-  - active_loop: slot_location_form
-
-- rule: Submit location form
-  condition:
-  # Condition that form is active.
-  - active_loop: slot_location_form
-  steps:
-  # Form is deactivated
-  - action: slot_location_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: action_location_submit
-```
-
-after connecting all the things you need to train the Bot again
-```bash
-rasa train
-```
-to run actions.py you need to run actions command in seperate terminal
-```bash
-rasa run actions
-```
-  
-  <table>
-
-  <tr>
-    <td><img src="https://user-images.githubusercontent.com/92524410/217488188-2408a261-e098-4637-b642-b58639f0a25b.png" width=270 height=480></td>
-    <td><img src="https://user-images.githubusercontent.com/92524410/217448866-4a3db819-7033-4c32-9338-a9871c2f807d.png" width=270 height=480></td>
-    <td><img src="https://user-images.githubusercontent.com/92524410/217448884-0aca13f9-cde8-473c-9a0c-64fee34fa10d.png" width=270 height=480></td>
-  </tr>
- </table>
-  
-  
-
-**So now you have connected an Open API in RASA Chatbot Web UI.
-For more details releated to RASA you can always refer to the latest documents and releases on Rasa.com or [Rasa Docs](https://rasa.com/docs/rasa/)**
 <p align="center">
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/cropped-vivify_login.png" margin_left="100"/>
 </p>
