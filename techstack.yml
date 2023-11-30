@@ -1,0 +1,37 @@
+repo_name: vivifyhealthcare/Rasabot
+report_id: 2958e2d5e2f04b632bff1b3713ba9820
+repo_type: Public
+timestamp: '2023-11-30T15:21:27+00:00'
+requested_by: sacredabhishek
+provider: github
+branch: main
+detected_tools_count: 3
+tools:
+- name: Python
+  description: A clear and powerful object-oriented programming language, comparable
+    to Perl, Ruby, Scheme, or Java.
+  website_url: https://www.python.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source: api/index.html
+  last_updated_by: "LT-VFY-HP-042022\ramya"
+  last_updated_on: 2022-08-23 07:30:11.000000000 Z
