@@ -1,7 +1,8 @@
 repo_name: vivifyhealthcare/Rasabot
-report_id: 5aee7e05e99fc07823c7d8662c9564f6
+report_id: 2958e2d5e2f04b632bff1b3713ba9820
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-30T15:30:21+00:00'
+timestamp: '2024-01-05T08:31:38+00:00'
 requested_by: sacredabhishek
 provider: github
 branch: main
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/vivifyhealthcare/Rasabot
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -25,6 +27,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/vivifyhealthcare/Rasabot
   detection_source: Repo Metadata
 - name: HTML
   description: Hypertext Markup Language for creating web pages.
@@ -32,6 +35,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source_url: https://github.com/vivifyhealthcare/Rasabot/blob/main/api/index.html
   detection_source: api/index.html
   last_updated_by: "LT-VFY-HP-042022\ramya"
   last_updated_on: 2022-08-23 07:30:11.000000000 Z
